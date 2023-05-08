@@ -11,12 +11,18 @@
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-    <div id="app">
-        <div class="container text-center">
+    <div id="app" class="d-flex align-items-center vh-100">
+        <div class="container text-center w-50 align-self-center">
             <h1>To Do List</h1>
-            <div class="container">
+            <div class="input-group mb-3">
+                <input 
+                type="text" v-model="todoItem" class="form-control" placeholder="Aggiungi una cosa da fare..."
+                aria-label=""  @keyup.enter="updateList">
+                <button class="btn btn-secondary" @click="updateList">Aggiungi</button>
+            </div>
+            <div>
                 <ul class="list-unstyled">
-                    <li>item</li>
+                    <li v-for="(todo,index) in todoList" :key="index" class="mb-3">{{todo}}</li>
                 </ul>
             </div>
         </div>
