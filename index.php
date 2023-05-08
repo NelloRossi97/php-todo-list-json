@@ -12,7 +12,7 @@
   </head>
   <body>
     <div id="app" class="d-flex align-items-center vh-100">
-        <div class="container text-center w-50 align-self-center">
+        <div class="container text-center w-50 align-self-center bg-black rounded-5 p-5 text-white">
             <h1>To Do List</h1>
             <div class="input-group mb-3">
                 <input 
@@ -20,9 +20,9 @@
                 aria-label=""  @keyup.enter="updateList">
                 <button class="btn btn-secondary" @click="updateList">Aggiungi</button>
             </div>
-            <div>
+            <div class="d-flex justify-content-center">
                 <ul class="list-unstyled">
-                    <li v-for="(todo,index) in todoList" :key="index" class="mb-3">{{todo}}</li>
+                    <li v-for="(todo,index) in todoList" :key="index" class="mb-3 d-flex justify-content-between align-items-center ps-3 rounded-2">{{todo}} <button class="btn btn-danger ms-5"> <i class="fa-solid fa-trash"></i> </button> </li>
                 </ul>
             </div>
         </div>
